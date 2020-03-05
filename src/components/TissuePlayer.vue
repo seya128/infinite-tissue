@@ -13,7 +13,7 @@
     </div>
 
     <div class="window-player" :class="{enable:isDisplayPlayer}">
-      <video src="4621190_Trim.mp4" @mousedown.prevent="onClick" @touchstart.prevent="onClick"></video>
+      <video src="4621190_Trim.mp4" @mousedown.prevent="onClick" @touchstart.prevent="onClick" webkit-playsinline playsinline muted autoplay></video>
     </div>
   </div>
 </template>
