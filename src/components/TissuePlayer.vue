@@ -7,7 +7,7 @@
     </div>
 
     <div class="window-player" :style="playerStyle">
-      <video src="/4621190_Trim.mp4" @mousedown.prevent="onClick" @touchstart.prevent="onClick"></video>
+      <video src="4621190_Trim.mp4" @mousedown.prevent="onClick" @touchstart.prevent="onClick"></video>
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
     initAudio() {
       this.audio = new Audio();
       this.audio.preload = "auto";
-      this.audio.src = "/tissue.mp3";
+      this.audio.src = "tissue.mp3";
     },
     onStart() {
       console.log("onStart");
