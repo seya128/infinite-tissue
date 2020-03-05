@@ -11,7 +11,10 @@ export default {
   name: 'App',
   components: {
     TissuePlayer
-  }
+  },
+  created() {
+    this.$ga.page('/');
+  },
 }
 </script>
 

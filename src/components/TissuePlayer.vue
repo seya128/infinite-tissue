@@ -24,6 +24,8 @@ export default {
 
       isDisplayPlayer: false,
 
+      clickCounter: 0,
+
     }
   },
   created() {
@@ -48,6 +50,9 @@ export default {
 
       this.audio.currentTime = 0;
       this.audio.play();
+
+      this.clickCounter ++;
+      this.$ga.event('TissuePlayer', 'click', 'テッシュクリック', this.clickCounter);
     }
   },
 
