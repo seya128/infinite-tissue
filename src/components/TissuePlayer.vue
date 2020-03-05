@@ -1,12 +1,12 @@
 <template>
   <div class="tissue-player">
-    <div class="window-start" v-show="isDisplayStart" >
+    <div class="window-start" >
       <h1 >{{ msg }}</h1>
       <p>思う存分ティッシュを引き抜こう！！</p>
-      <button @click="onStart">START</button>
+      <button @click="onStart" :class="{disable: isDisplayPlayer}">START</button>
     </div>
 
-    <div class="window-player" :style="playerStyle">
+    <div class="window-player" :class="{enable:isDisplayPlayer}">
       <video src="4621190_Trim.mp4" @mousedown.prevent="onClick" @touchstart.prevent="onClick"></video>
     </div>
   </div>
@@ -22,13 +22,8 @@ export default {
     return {
       audio: null,
 
-      isDisplayStart: true,
       isDisplayPlayer: false,
 
-      playerStyle: {
-        opacity: 0.0,
-        zIndex: 0,
-      },
     }
   },
   created() {
@@ -44,8 +39,6 @@ export default {
       console.log("onStart");
       this.isDisplayPlayer = true;
       this.audio.load();
-      this.playerStyle.opacity = 1.0;
-      this.playerStyle.zIndex = 100;
       
     },
     onClick(ev) {
@@ -83,6 +76,10 @@ h1 {
 button {
   padding: 10px 50px;
 }
+button.disable {
+  transition: 1s;
+  opacity: 0;
+}
 
 .window-player {
   position: fixed;
@@ -90,7 +87,14 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 0;
+  opacity: 0;
+}
+
+.enable {
+  z-index: 100;
   transition: 1s;
+  opacity: 1;
 }
 
 video {
