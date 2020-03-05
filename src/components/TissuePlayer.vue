@@ -4,6 +4,12 @@
       <h1 >{{ msg }}</h1>
       <p>思う存分ティッシュを引き抜こう！！</p>
       <button @click="onStart" :class="{disable: isDisplayPlayer}">START</button>
+      <p :class="{disable: isDisplayPlayer}">
+        <a href="https://dorasu-tech.dorasu.com/">Dorasu Tech</a><br/>
+        <a href="https://www.photolibrary.jp/">フォトライブラリー photolibrary</a><br/>
+        <a href="https://taira-komori.jpn.org/">フリー効果音・無料効果音素材</a><br/>
+      </p>
+
     </div>
 
     <div class="window-player" :class="{enable:isDisplayPlayer}">
@@ -81,7 +87,7 @@ h1 {
 button {
   padding: 10px 50px;
 }
-button.disable {
+.disable {
   transition: 1s;
   opacity: 0;
 }
@@ -101,6 +107,8 @@ button.disable {
   transition: 1s;
   opacity: 1;
 }
+
+
 
 video {
   width: 100vw;
