@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.c7ebd9b24ae789b3c6c949d999278c27.js"
+  "precache-manifest.9d3d75f4c2da466db9805cd06bf956be.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "infinite-tissue"});
